@@ -3,18 +3,320 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lu Yongkang</title>
+  <meta name="description" content="卢泳康的个人学术主页">
+  <title>卢泳康 | Lu Yongkang</title>
   <style>
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f8fa; color: #1f2328; }
-    main { max-width: 680px; padding: 48px 24px; text-align: center; }
-    h1 { margin: 0 0 12px; font-size: 40px; }
-    p { margin: 0; color: #59636e; font-size: 18px; }
+    :root {
+      --text: #202124;
+      --muted: #646b73;
+      --line: #dfe2e5;
+      --accent: #176b68;
+      --page-width: 860px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--text);
+      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    header,
+    main,
+    footer {
+      width: min(var(--page-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      color: var(--text);
+      font-family: Georgia, "Songti SC", serif;
+      font-size: 19px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .intro {
+      min-height: 330px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 132px;
+      align-items: center;
+      gap: 48px;
+      padding: 54px 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-family: Georgia, "Songti SC", serif;
+      font-size: 46px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .english-name {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .bio {
+      max-width: 650px;
+      margin-bottom: 15px;
+      color: var(--muted);
+    }
+
+    .links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .avatar {
+      width: 132px;
+      height: 168px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #f3f5f4;
+    }
+
+    section {
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin-bottom: 24px;
+      font-family: Georgia, "Songti SC", serif;
+      font-size: 25px;
+      letter-spacing: 0;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 145px minmax(0, 1fr);
+      gap: 24px;
+      padding: 20px 0;
+      border-top: 1px solid #eef0f1;
+    }
+
+    .entry:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .entry h3 {
+      margin-bottom: 5px;
+      overflow-wrap: anywhere;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .entry p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .status {
+      margin-left: 7px;
+      color: #8a5416;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 620px) {
+      header,
+      main,
+      footer {
+        width: min(var(--page-width), calc(100% - 28px));
+      }
+
+      header {
+        padding: 16px 0;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .intro {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 44px 0;
+      }
+
+      .avatar {
+        grid-row: 1;
+        width: 104px;
+        height: 132px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      section {
+        padding: 34px 0;
+      }
+
+      .entry {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Lu Yongkang</h1>
-    <p>Welcome to my GitHub Pages site.</p>
+  <header>
+    <a class="brand" href="#top">卢泳康</a>
+    <nav aria-label="主导航">
+      <a href="#education">教育背景</a>
+      <a href="#publications">论文成果</a>
+      <a href="#experience">实习经历</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="intro">
+      <div>
+        <h1>卢泳康<span class="english-name">Lu Yongkang</span></h1>
+        <p class="bio">
+          清华大学深圳国际研究生院电子信息博士研究生，鹏城国家实验室联合培养，导师：吴志勇教授。
+          研究方向是：SpeechLLM（语音大语言模型）、Audio Codec（音频编解码器）、Image Compression（图像压缩）、数字人。
+        </p>
+        <div class="links">
+          <a href="https://github.com/luki0810" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+      <img class="avatar" src="portrait.jpg" alt="卢泳康的证件照">
+    </div>
+
+    <section id="education">
+      <h2>教育背景</h2>
+      <article class="entry">
+        <div class="date">2026.09 - 2031.06</div>
+        <div>
+          <h3>清华大学 · 电子信息 · 博士研究生</h3>
+          <p>清华大学深圳国际研究生院，鹏城国家实验室联合培养。导师：吴志勇教授。</p>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="date">2022.09 - 2026.06</div>
+        <div>
+          <h3>华南理工大学 · 软件工程 · 学士</h3>
+          <p>双学位试点项目，软件工程 + 工商管理，两次获得国家奖学金。</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="publications">
+      <h2>论文成果</h2>
+      <article class="entry">
+        <div class="date">CVPR 2026</div>
+        <div>
+          <h3>FreqSIC: Frequency-Aware Stereo Image Compression <span class="status">Highlight</span></h3>
+          <p>共同第一作者。提出频域对齐模块与双向多参考熵模型，用于高效立体图像压缩。</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience">
+      <h2>实习经历</h2>
+      <article class="entry">
+        <div class="date">2026.09 - 至今</div>
+        <div>
+          <h3>面壁智能 · OpenBMB</h3>
+          <p>语音算法工程师，负责语音大模型基模训练，参与 VoxCPM 模型训练与发布。</p>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="date">2026.03 - 2026.09</div>
+        <div>
+          <h3>腾讯科技 · 互动娱乐事业群</h3>
+          <p>负责音频驱动 3D 数字人面部动画的模型训练与评测优化闭环，作为核心贡献者发布游戏《数字景德镇 · 瓷都小匠》，助力景德镇申遗成功。</p>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="date">2025.09 - 2026.01</div>
+        <div>
+          <h3>香港中文大学（深圳）&amp; 深圳河套学院</h3>
+          <p>研究音频编解码器、音频离散化与表征提取，搭建 DynamicCodec 实验平台。</p>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="date">2025.03 - 2025.08</div>
+        <div>
+          <h3>清华大学深圳国际研究生院</h3>
+          <p>研究立体图像压缩，完成 FreqSIC，以共同第一作者身份发表在 CVPR 2026（Highlight）。</p>
+        </div>
+      </article>
+    </section>
   </main>
+
+  <footer>© 2026 Lu Yongkang</footer>
 </body>
 </html>
