@@ -1,2 +1,2 @@
 # 个人主页
-[luki0810](https://luki0810.github.io/)
+[Yongkang Lu ｜ Luki](https://luki0810.github.io/)
